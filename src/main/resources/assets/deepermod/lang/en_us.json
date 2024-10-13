@@ -1,3 +1,7 @@
 {
-  "item:.deepermod.parzanite": "Parzanite"
+  "item.deepermod.parzanite": "Parzanite",
+  "block.deepermod.parzanite_ore": "Parzanite Ore",
+  "block.deepermod.yellow_granite": "Yellow Granite",
+  "block.deepermod.parzanite_block": "Block of Parzanite",
+  "block.deepermod.yellow_granite_diamond_ore": "Yellow Granite Diamond Ore"
 }

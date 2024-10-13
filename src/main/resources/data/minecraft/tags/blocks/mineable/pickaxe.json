@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "deepermod:parzanite_ore",
+    "deepermod:parzanite_block",
+    "deepermod:yellow_granite",
+    "deepermod:yellow_granite_diamond_ore"
+  ]
+}
