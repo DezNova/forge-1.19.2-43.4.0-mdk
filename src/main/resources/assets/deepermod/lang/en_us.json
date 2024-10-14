@@ -3,5 +3,6 @@
   "block.deepermod.parzanite_ore": "Parzanite Ore",
   "block.deepermod.yellow_granite": "Yellow Granite",
   "block.deepermod.parzanite_block": "Block of Parzanite",
-  "block.deepermod.yellow_granite_diamond_ore": "Yellow Granite Diamond Ore"
+  "block.deepermod.yellow_granite_diamond_ore": "Yellow Granite Diamond Ore",
+  "item.deepermod.parzanite_iron_pickaxe": "Parzanite Reinforced Iron Pickaxe"
 }
