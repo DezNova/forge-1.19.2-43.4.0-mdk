@@ -2,6 +2,7 @@ package net.dez.deepermod.worldgen.dimension;
 
 import net.dez.deepermod.DeeperMod;
 import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
@@ -34,5 +35,6 @@ public class ModDimensions {
 
     public static final ResourceKey<LevelStem> TECTONIC_KEY = ResourceKey.create(Registry.LEVEL_STEM_REGISTRY,
             new ResourceLocation(DeeperMod.MOD_ID, "tectonic"));
+
 
 }

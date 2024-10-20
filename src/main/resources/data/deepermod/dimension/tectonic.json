@@ -6,8 +6,22 @@
     "seed": 0,
     "settings": "deepermod:tectonic",
     "biome_source": {
-        "type": "minecraft:fixed",
-        "biome": "minecraft:nether_wastes"
+        "type": "minecraft:multi_noise",
+        "biomes": [
+          {
+          "biome": "deepermod:barren_lands",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+
+        }
+        ]
     }
   }
 }
