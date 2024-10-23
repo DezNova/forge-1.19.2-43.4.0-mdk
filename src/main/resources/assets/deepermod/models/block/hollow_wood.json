@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "deepermod:block/hollow_wood_top",
+    "side": "deepermod:block/hollow_wood"
+  }
+}

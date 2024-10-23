@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.dez.deepermod.block.ModBlocks;
 import net.dez.deepermod.item.ModItems;
 import net.dez.deepermod.worldgen.DeeperBiomes;
+import net.dez.deepermod.worldgen.DeeperConfiguredFeatures;
 import net.dez.deepermod.worldgen.dimension.DeeperCarvers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,6 +35,7 @@ public class DeeperMod
         ModBlocks.register(modEventBus);
         DeeperCarvers.register(modEventBus);
         DeeperBiomes.register(modEventBus);
+        DeeperConfiguredFeatures.register(modEventBus);
 
 
         // Register the commonSetup method for modloading

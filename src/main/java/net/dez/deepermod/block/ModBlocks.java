@@ -2,12 +2,12 @@ package net.dez.deepermod.block;
 
 import net.dez.deepermod.DeeperMod;
 import net.dez.deepermod.item.ModItems;
+import net.dez.deepermod.worldgen.tree.HollowTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -52,7 +52,14 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops())
                     , CreativeModeTab.TAB_DECORATIONS);
 
+    public static final RegistryObject<Block> HOLLOW_WOOD = registerBlock("hollow_wood",
+            () -> new DeeperWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(6f))
+                    , CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    public static final RegistryObject<Block> HOLLOW_SAPLING = registerBlock("hollow_sapling",
+            () -> new SaplingBlock( new HollowTreeGrower()
+                    , BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), CreativeModeTab.TAB_DECORATIONS);
 
     private static<T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
