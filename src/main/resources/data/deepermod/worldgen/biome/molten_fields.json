@@ -9,7 +9,7 @@
     "has_clouds": false,
     "cloud_height": 0,
     "sky_color": 0,
-    "fog_color": 328965,
+    "fog_color": 0,
     "water_color": 11505960,
     "water_fog_color": 15124572,
     "grass_color": 4477507,
@@ -25,12 +25,6 @@
 
     },
     "music": {
-    },
-    "particle": {
-      "options": {
-        "type": "white_ash"
-      },
-      "probability": 0.225
     }
   },
   "spawners": {

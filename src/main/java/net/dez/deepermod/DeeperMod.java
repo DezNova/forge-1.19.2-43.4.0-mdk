@@ -5,10 +5,16 @@ import net.dez.deepermod.block.ModBlocks;
 import net.dez.deepermod.item.ModItems;
 import net.dez.deepermod.worldgen.DeeperBiomes;
 import net.dez.deepermod.worldgen.DeeperConfiguredFeatures;
+import net.dez.deepermod.worldgen.DeeperPlacedFeature;
 import net.dez.deepermod.worldgen.dimension.DeeperCarvers;
+import net.minecraft.core.Registry;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -19,6 +25,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DeeperMod.MOD_ID)
@@ -31,12 +40,17 @@ public class DeeperMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        DeeperCarvers.register(modEventBus);
-        DeeperBiomes.register(modEventBus);
-        DeeperConfiguredFeatures.register(modEventBus);
 
+        DeeperCarvers.register(modEventBus);
+
+
+        DeeperConfiguredFeatures.register(modEventBus);
+        DeeperPlacedFeature.register(modEventBus);
+
+        DeeperBiomes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -58,6 +72,16 @@ public class DeeperMod
         LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
 
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+
+        ResourceLocation id = new ResourceLocation(MOD_ID, "hollow_tree");
+        ResourceLocation id2 = new ResourceLocation(MOD_ID, "hollow_tree_placed");
+        LOGGER.info("CF:" + BuiltinRegistries.CONFIGURED_FEATURE.get(id));
+        LOGGER.info("PF:" + BuiltinRegistries.PLACED_FEATURE.get(id2));
+
+        ResourceLocation id3 = new ResourceLocation(MOD_ID, "hollow_woods");
+        LOGGER.info("Hollow woods exist:" + ForgeRegistries.BIOMES.getHolder(id3).isPresent());
+
+
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

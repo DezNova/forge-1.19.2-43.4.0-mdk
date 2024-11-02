@@ -178,11 +178,11 @@
             "surface_type": "floor",
             "add_surface_depth": false,
             "secondary_depth_range": 0,
-            "offset": 0
+            "offset": 2
           }, "then_run": {
             "type": "minecraft:block",
             "result_state": {
-              "Name": "minecraft:dirt"
+              "Name": "deepermod:still_dirt"
             }
           }
         }
