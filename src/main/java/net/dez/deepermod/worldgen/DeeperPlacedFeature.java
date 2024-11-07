@@ -5,7 +5,9 @@ import net.dez.deepermod.block.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -24,10 +26,28 @@ public class DeeperPlacedFeature {
 
 
     public static final RegistryObject<PlacedFeature> HOLLOW_TREE_PLACED = PLACED_FEATURES.register("hollow_tree_placed",
-            () -> new PlacedFeature(DeeperConfiguredFeatures.HOLLOW_TREE_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
-                    PlacementUtils.countExtra(3, 0.1f, 2))));
+            () -> new PlacedFeature(DeeperConfiguredFeatures.HOLLOW_TREE_SPAWN.getHolder().get(), List.of(
+                    //CountOnEveryLayerPlacement.of(4),
+                    CountPlacement.of(10),
+                    InSquarePlacement.spread(),
+                    //HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES),
+                    HeightRangePlacement.triangle(VerticalAnchor.absolute(60), VerticalAnchor.absolute(84)),
+                    PlacementUtils.countExtra(8, 0.5f, 4),
+                    BiomeFilter.biome()
+            )));
 
     public static void register(IEventBus eventBus){
         PLACED_FEATURES.register(eventBus);
     }
+
+
+    public static final RegistryObject<PlacedFeature> TEST_DIAMOND_BLOCK_PLACED =
+            PLACED_FEATURES.register("test_diamond_block_placed",
+                    () -> new PlacedFeature(DeeperConfiguredFeatures.TEST_DIAMOND_BLOCK.getHolder().get(),
+                            List.of(
+                                    InSquarePlacement.spread(),
+                                    HeightRangePlacement.uniform(VerticalAnchor.absolute(30), VerticalAnchor.absolute(90)), // Adjust Y-level as needed
+                                    BiomeFilter.biome()
+                            )));
+
 }

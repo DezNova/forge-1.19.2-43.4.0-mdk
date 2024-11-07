@@ -22,7 +22,7 @@ public class DeeperBiomes {
 
     public static final ResourceKey<Biome> BARREN_LANDS = registerBiome("barren_lands");
 
-    public static final ResourceKey<Biome> HOLLOW_WOODS = registerBiome("hollow_woods");
+    public static final ResourceKey<Biome> HOLLOW_WOODS = registerBiomeCustom("hollow_woods", DeeperBiomes::createHollowWoodsBiome);
 
     public static final ResourceKey<Biome> MOLTEN_FIELDS = registerBiome("molten_fields");
 
@@ -48,8 +48,8 @@ Used for debugging tree Placed Feature
  */
     static Biome createHollowWoodsBiome() {
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder()
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
-                        DeeperPlacedFeature.HOLLOW_TREE_PLACED.getHolder().get());
+                .addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DeeperPlacedFeature.HOLLOW_TREE_PLACED.getHolder().get());
+
 
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
 

@@ -10,6 +10,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -49,4 +50,13 @@ public class DeeperConfiguredFeatures {
         CONFIGURED_FEATURES.register(eventBus);
 
     }
+
+
+
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> TEST_DIAMOND_BLOCK =
+            CONFIGURED_FEATURES.register("test_diamond_block",
+                    () -> new ConfiguredFeature<>(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.DIAMOND_BLOCK))
+                    ));
 }

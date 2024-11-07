@@ -13,7 +13,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 
 public class ModDimensions {
 
-///*
     public static final ResourceKey<Level> TECTONIC_LEVEL_KEY = ResourceKey.create(Registry.DIMENSION_REGISTRY,
             new ResourceLocation(DeeperMod.MOD_ID, "tectonic"));
 
@@ -23,8 +22,4 @@ public class ModDimensions {
     public static final ResourceKey<LevelStem> TECTONIC_KEY = ResourceKey.create(Registry.LEVEL_STEM_REGISTRY,
             new ResourceLocation(DeeperMod.MOD_ID, "tectonic"));
 
-
-    public static void register(IEventBus eventBus){
-        //.register(eventBus);
-    }
 }
