@@ -46,7 +46,6 @@ public class DeeperMod
 
         DeeperCarvers.register(modEventBus);
 
-
         DeeperConfiguredFeatures.register(modEventBus);
         DeeperPlacedFeature.register(modEventBus);
 

@@ -22,7 +22,7 @@ public class DeeperBiomes {
 
     public static final ResourceKey<Biome> BARREN_LANDS = registerBiome("barren_lands");
 
-    public static final ResourceKey<Biome> HOLLOW_WOODS = registerBiomeCustom("hollow_woods", DeeperBiomes::createHollowWoodsBiome);
+    public static final ResourceKey<Biome> HOLLOW_WOODS = registerBiome("hollow_woods");
 
     public static final ResourceKey<Biome> MOLTEN_FIELDS = registerBiome("molten_fields");
 
