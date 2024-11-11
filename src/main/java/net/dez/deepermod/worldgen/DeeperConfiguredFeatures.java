@@ -3,9 +3,7 @@ package net.dez.deepermod.worldgen;
 import com.google.common.base.Suppliers;
 import net.dez.deepermod.DeeperMod;
 import net.dez.deepermod.block.ModBlocks;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -16,10 +14,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -65,9 +60,7 @@ public class DeeperConfiguredFeatures {
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TECTONIC_PARZANITE_ORES.get(), 3)));
 
 
-
     public static void register(IEventBus eventBus){
         CONFIGURED_FEATURES.register(eventBus);
-
     }
 }

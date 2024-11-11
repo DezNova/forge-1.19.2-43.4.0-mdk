@@ -7,6 +7,7 @@ import net.dez.deepermod.worldgen.DeeperBiomes;
 import net.dez.deepermod.worldgen.DeeperConfiguredFeatures;
 import net.dez.deepermod.worldgen.DeeperPlacedFeature;
 import net.dez.deepermod.worldgen.dimension.DeeperCarvers;
+import net.dez.deepermod.worldgen.dimension.carvers.ConfiguredCarvers;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -44,7 +45,10 @@ public class DeeperMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+
         DeeperCarvers.register(modEventBus);
+        ConfiguredCarvers.register(modEventBus);
+
 
         DeeperConfiguredFeatures.register(modEventBus);
         DeeperPlacedFeature.register(modEventBus);
