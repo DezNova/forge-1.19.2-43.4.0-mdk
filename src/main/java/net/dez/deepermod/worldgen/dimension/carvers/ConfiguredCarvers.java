@@ -32,9 +32,9 @@ public class ConfiguredCarvers {
                             .5f,
                             UniformHeight.of(VerticalAnchor.bottom(), VerticalAnchor.top()),
                             ConstantFloat.of(0.5f),
-                            VerticalAnchor.aboveBottom(10),
+                            VerticalAnchor.aboveBottom(0),
                             replaceableBlocks.get(),
-                            ConstantFloat.of(1.0F),
+                            ConstantFloat.of(2.3F),
                             ConstantFloat.of(1.0F),
                             ConstantFloat.of(-0.7F))));
 
