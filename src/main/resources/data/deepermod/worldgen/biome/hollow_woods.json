@@ -50,7 +50,7 @@
   "spawn_costs": {},
   "carvers": {
     "air": [
-
+      "deepermod:tectonic_cave"
     ]
   },
   "features": [

@@ -2,20 +2,20 @@ package net.dez.deepermod;
 
 import com.mojang.logging.LogUtils;
 import net.dez.deepermod.block.ModBlocks;
+import net.dez.deepermod.entity.DeeperEntityTypes;
+import net.dez.deepermod.entity.client.GlomerRenderer;
 import net.dez.deepermod.item.ModItems;
 import net.dez.deepermod.worldgen.DeeperBiomes;
 import net.dez.deepermod.worldgen.DeeperConfiguredFeatures;
 import net.dez.deepermod.worldgen.DeeperPlacedFeature;
 import net.dez.deepermod.worldgen.dimension.DeeperCarvers;
 import net.dez.deepermod.worldgen.dimension.carvers.ConfiguredCarvers;
-import net.minecraft.core.Registry;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -26,9 +26,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
-
-import java.util.ArrayList;
-import java.util.List;
+import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DeeperMod.MOD_ID)
@@ -45,15 +43,15 @@ public class DeeperMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-
         DeeperCarvers.register(modEventBus);
         ConfiguredCarvers.register(modEventBus);
-
 
         DeeperConfiguredFeatures.register(modEventBus);
         DeeperPlacedFeature.register(modEventBus);
 
         DeeperBiomes.register(modEventBus);
+        DeeperEntityTypes.register(modEventBus);
+        GeckoLib.initialize();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -94,7 +92,7 @@ public class DeeperMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            EntityRenderers.register(DeeperEntityTypes.GLOMER.get(), GlomerRenderer::new);
         }
     }
 }

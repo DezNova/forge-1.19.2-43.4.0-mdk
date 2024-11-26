@@ -28,8 +28,8 @@ public class DeeperPlacedFeature {
 
     public static final RegistryObject<PlacedFeature> HOLLOW_TREE_PLACED = PLACED_FEATURES.register("hollow_tree_placed",
             () -> new PlacedFeature(DeeperConfiguredFeatures.HOLLOW_TREE_SPAWN.getHolder().get(), List.of(
-                    //CountOnEveryLayerPlacement.of(10),
-                    CountPlacement.of(100),
+                    CountOnEveryLayerPlacement.of(100),
+                    //CountPlacement.of(110),
                     InSquarePlacement.spread(),
                     HeightmapPlacement.onHeightmap(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES),
                     HeightRangePlacement.uniform(VerticalAnchor.absolute(60), VerticalAnchor.absolute(85)),
@@ -39,11 +39,16 @@ public class DeeperPlacedFeature {
             )));
 
 
-    public static final RegistryObject<PlacedFeature> PARZANITE_ORE_PLACED = PLACED_FEATURES.register("parzanite_ore_placed",
+    public static final RegistryObject<PlacedFeature> PARZANITE_ORE_PLACED = PLACED_FEATURES.register("parzanite_ore_tectonic_placed",
             () -> new PlacedFeature(DeeperConfiguredFeatures.PARZANITE_ORE_TECTONIC.getHolder().get(),
                     orePlacementCommon(7, //veins per chunk
                             HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(5), VerticalAnchor.aboveBottom(200)))));
 
+
+    public static final RegistryObject<PlacedFeature> DIAMOND_ORE_PLACED = PLACED_FEATURES.register("diamond_ore_tectonic_placed",
+            () -> new PlacedFeature(DeeperConfiguredFeatures.DIAMOND_ORE_TECTONIC.getHolder().get(),
+                    orePlacementRare(1,
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(1), VerticalAnchor.aboveBottom(30)))));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p, PlacementModifier p2){
         return List.of(p, InSquarePlacement.spread(), p2, BiomeFilter.biome());

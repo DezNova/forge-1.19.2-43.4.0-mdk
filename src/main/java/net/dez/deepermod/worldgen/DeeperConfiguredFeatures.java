@@ -31,7 +31,7 @@ public class DeeperConfiguredFeatures {
             CONFIGURED_FEATURES.register("hollow_tree", () ->
                     new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                             BlockStateProvider.simple(ModBlocks.HOLLOW_WOOD.get()),
-                            new GiantTrunkPlacer(22,10,5), //first parameter seems to be height
+                            new GiantTrunkPlacer(32,10,5), //first parameter seems to be height
                             BlockStateProvider.simple(Blocks.AIR),
                             new BlobFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), 4),
                             new TwoLayersFeatureSize(1,0,2)).dirt(BlockStateProvider.simple(ModBlocks.STILL_DIRT.get())).build()));
@@ -53,11 +53,20 @@ public class DeeperConfiguredFeatures {
             OreConfiguration.target(new BlockMatchTest(ModBlocks.YELLOW_GRANITE.get()), ModBlocks.YELLOW_GRANITE_DIAMOND_ORE.get().defaultBlockState())
     ));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> TECTONIC_IRON_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(new BlockMatchTest(ModBlocks.YELLOW_GRANITE.get()), ModBlocks.YELLOW_GRANITE_IRON_ORE.get().defaultBlockState())
+    ));
+
+
+
     public static final RegistryObject<ConfiguredFeature<?,? >> PARZANITE_ORE_TECTONIC = CONFIGURED_FEATURES.register("parzanite_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TECTONIC_PARZANITE_ORES.get(), 7)));
 
     public static final RegistryObject<ConfiguredFeature<?,? >> DIAMOND_ORE_TECTONIC = CONFIGURED_FEATURES.register("diamond_ore_tectonic",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TECTONIC_PARZANITE_ORES.get(), 3)));
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TECTONIC_DIAMOND_ORE.get(), 3)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> IRON_ORE_TECTONIC = CONFIGURED_FEATURES.register("iron_ore_tectonic",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(TECTONIC_PARZANITE_ORES.get(), 8)));
 
 
     public static void register(IEventBus eventBus){

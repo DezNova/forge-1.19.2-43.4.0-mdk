@@ -48,6 +48,12 @@ public class ModBlocks {
                     , UniformInt.of(3,7))
                     , CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    public static final RegistryObject<Block> YELLOW_GRANITE_IRON_ORE = registerBlock("yellow_granite_iron_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(7f)
+                    .requiresCorrectToolForDrops())
+                    , CreativeModeTab.TAB_BUILDING_BLOCKS);
+
 
     public static final RegistryObject<Block> PARZANITE_Block = registerBlock("parzanite_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
@@ -67,6 +73,9 @@ public class ModBlocks {
 
 
 
+
+
+
     private static<T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
@@ -79,9 +88,5 @@ public class ModBlocks {
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
-        System.out.println("registered blocks");
-        for(RegistryObject<Block> reg : BLOCKS.getEntries()){
-            System.out.println("resource location:" +  reg.getKey().location() + " Configuration object is present: " + reg.isPresent());
-        }
     }
 }

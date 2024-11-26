@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#deepermod:tectonic_biomes",
+  "features": "deepermod:iron_ore_tectonic_placed",
+  "step": "underground_ores"
+}

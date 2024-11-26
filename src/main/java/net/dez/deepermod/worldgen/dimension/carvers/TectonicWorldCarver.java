@@ -83,16 +83,4 @@ public class TectonicWorldCarver  extends CaveWorldCarver {
         }
     }
 
-
-    /*
-    @Override
-    public boolean carve(CarvingContext context, CaveCarverConfiguration config, ChunkAccess p_224887_, Function<BlockPos, Holder<Biome>> biomeFunction, RandomSource p_224889_, Aquifer p_224890_, ChunkPos cPos, CarvingMask p_224892_) {
-        if(cPos.getWorldPosition().getY() < 65){
-            return false;
-        }
-        return super.carve(  context,  config,  p_224887_,  biomeFunction,  p_224889_,  p_224890_,  cPos,  p_224892_);
-    }
-    */
-
-
 }

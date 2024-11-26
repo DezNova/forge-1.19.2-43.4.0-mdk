@@ -1,5 +1,6 @@
 {
   "item.deepermod.parzanite": "Parzanite",
+  "item.deepermod.glomer_spawn_egg": "Glomer Spawn Egg",
   "block.deepermod.parzanite_ore": "Parzanite Ore",
   "block.deepermod.yellow_granite": "Yellow Granite",
   "block.deepermod.parzanite_block": "Block of Parzanite",
@@ -7,5 +8,6 @@
   "item.deepermod.parzanite_iron_pickaxe": "Parzanite Reinforced Iron Pickaxe",
   "block.deepermod.hollow_wood": "Hollow Wood",
   "block.deepermod.hollow_sapling": "Hollow Sapling",
-  "block.deepermod.still_dirt": "Still DIrt"
+  "block.deepermod.still_dirt": "Still Dirt",
+  "block.deepermod.yellow_granite_iron_ore": "Yellow Granite Iron Ore"
 }
