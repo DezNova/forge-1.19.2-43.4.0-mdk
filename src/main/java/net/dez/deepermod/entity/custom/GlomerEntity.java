@@ -40,7 +40,7 @@ public class GlomerEntity extends Monster implements IAnimatable {
                 .add(Attributes.MAX_HEALTH, 40.0d)
                 .add(Attributes.ATTACK_DAMAGE, 4.0f)
                 .add(Attributes.ATTACK_SPEED, 2.0f)
-                .add(Attributes.MOVEMENT_SPEED, 1.0f)
+                .add(Attributes.MOVEMENT_SPEED, 0.8f)
                 .build();
     }
 

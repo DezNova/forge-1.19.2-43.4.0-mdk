@@ -20,6 +20,17 @@
 						"1.0": {
 							"vector": [0, 0, 0]
 						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, -1]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
 					}
 				},
 				"LeftMouth": {
@@ -53,12 +64,20 @@
 						"1.0": {
 							"vector": [0, 0, 0]
 						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, -0.4, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
 					}
 				},
 				"LowerMouth": {
-					"relative_to": {
-						"rotation": "entity"
-					},
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -69,9 +88,23 @@
 						"1.0": {
 							"vector": [0, 0, 0]
 						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0.5, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 0]
+						}
 					}
 				},
 				"RightMouth": {
+					"relative_to": {
+						"rotation": "entity"
+					},
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]

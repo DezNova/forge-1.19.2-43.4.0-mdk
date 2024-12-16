@@ -32,7 +32,8 @@ public class GlomerRenderer extends GeoEntityRenderer<GlomerEntity> {
                                     int packedLightIn,
                                     ResourceLocation textureLocation) {
 
-        stack.scale(2, 2, 2);
+        stack.scale(1, 1, 1);
         return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
+
 }

@@ -17,7 +17,7 @@ public class DeeperEntityTypes {
     public static final RegistryObject<EntityType<GlomerEntity>> GLOMER =
         ENTITY_TYPES.register("glomer",
             () -> EntityType.Builder.of(GlomerEntity::new, MobCategory.MONSTER)
-            .sized(0.4f, 1.5f) //hitbox size
+            .sized(1.5f, 1.5f) //hitbox size
             .build(new ResourceLocation(DeeperMod.MOD_ID, "glomer").toString()));
 
     public static void register(IEventBus eventBus){
